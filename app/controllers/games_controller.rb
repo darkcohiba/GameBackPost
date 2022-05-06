@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: %i[ show update destroy ]
-
+  skip_before_action :authorize, only: :index
+  
   # GET /games
   def index
     @games = Game.all

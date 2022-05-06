@@ -12,7 +12,7 @@ puts "🌱 Seeding start!"
 
 puts "seeding users mofo"
 
-p1 = User.create(
+character1 = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     flappy_high_score: Faker::Number.between(from: 4, to: 15),
@@ -20,7 +20,7 @@ p1 = User.create(
     password_digest: "password"
 )
 
-p2 = User.create(
+character2 = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     flappy_high_score: Faker::Number.between(from: 4, to: 15),
@@ -28,7 +28,7 @@ p2 = User.create(
     password_digest: "password"
 )
 
-p3 = User.create(
+character3 = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     flappy_high_score: Faker::Number.between(from: 4, to: 15),
@@ -36,7 +36,7 @@ p3 = User.create(
     password_digest: "password"
 )
 
-p4 = User.create(
+character4 = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     flappy_high_score: Faker::Number.between(from: 4, to: 15),
@@ -44,7 +44,7 @@ p4 = User.create(
     password_digest: "password"
 )
 
-p5 = User.create(
+character5 = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     flappy_high_score: Faker::Number.between(from: 4, to: 15),
@@ -52,7 +52,7 @@ p5 = User.create(
     password_digest: "password"
 )
 
-p6 = User.create(
+character6 = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     flappy_high_score: Faker::Number.between(from: 4, to: 15),
@@ -64,37 +64,37 @@ puts "🌱 Seeding games"
 
 Game.create(
     game: "Flappy Bird",
-    user_id: p1.id,
+    user_id: character2.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 
 Game.create(
     game: "Flappy Bird",
-    user_id: p2.id,
+    user_id: character2.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 
 Game.create(
     game: "Flappy Bird",
-    user_id: p3.id,
+    user_id: character3.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 
 Game.create(
     game: "Flappy Bird",
-    user_id: p4.id,
+    user_id: character4.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 
 Game.create(
     game: "Doodle Jump",
-    user_id: p5.id,
+    user_id: character5.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 
 Game.create(
     game: "Doodle Jump",
-    user_id: p6.id,
+    user_id: character6.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 

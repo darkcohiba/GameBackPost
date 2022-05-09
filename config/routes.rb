@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-    # Login / Logout Routes
-    post '/login', to: 'sessions#login'
-    delete '/logout', to: 'sessions#logout'
+  #special games route for
+  get '/topflap', to: 'games#topflap'
+  get '/topsnake', to: 'games#topsnake'
+
+  # Login / Logout Routes
+  post '/login', to: 'sessions#login'
+  delete '/logout', to: 'sessions#logout'
+  
 
     
 end

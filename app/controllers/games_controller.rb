@@ -1,6 +1,21 @@
 class GamesController < ApplicationController
-  skip_before_action :authorize, only: :index
+  skip_before_action :authorize, :only => [:index, :topflap, :topsnake]
   
+
+  # GET /top flappy
+  def topflap
+    games = Game.where("game = ? ", "Flappy Bird").order(score: :desc).limit(10)
+
+    render json: games
+  end
+
+  # GET /top snake
+  def topsnake
+    games = Game.where("game = ? ", "Snake").order(score: :desc).limit(10)
+
+    render json: games
+  end
+
   # GET /games
   def index
     @games = Game.all
@@ -46,6 +61,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.fetch(:game, {})
+      params.fetch(:game, :user, :score)
     end
 end

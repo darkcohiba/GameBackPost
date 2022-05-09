@@ -98,5 +98,55 @@ Game.create(
     score: Faker::Number.between(from: 3, to: 15)
 )
 
+Game.create(
+    game: "Snake",
+    user_id: character1.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+Game.create(
+    game: "Snake",
+    user_id: character3.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+Game.create(
+    game: "Snake",
+    user_id: character1.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+Game.create(
+    game: "Snake",
+    user_id: character2.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+Game.create(
+    game: "Snake",
+    user_id: character3.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+Game.create(
+    game: "Snake",
+    user_id: character4.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+Game.create(
+    game: "Snake",
+    user_id: character5.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+Game.create(
+    game: "Snake",
+    user_id: character6.id,
+    score: Faker::Number.between(from: 3, to: 15)
+)
+
+
+
 
 puts "🌱 Seeding done!"

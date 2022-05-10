@@ -3,14 +3,15 @@ class SessionsController < ApplicationController
 
     def login
         user = User.find_by(username:params[:username])
-        
-        if user&.authenticate(params[:password])
+        puts "Welcome"
+        puts user&.authenticate(password_digest:params[:password])
+        puts params[:password]
+        if user&.authenticate(password_digest:params[:password])
             session[:current_user] = user.id
-            session[:login_attempts] = 0
             render json: user, status: :ok
+            puts "working?"
         else
-            session[:login_attempts] ||= 0
-            session[:login_attempts] += 1
+            puts "not working"
             render json: { error: "Invalid Password and/or Username" },  status: :unauthorized
         end
     end 

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    has_many :games
+    has_many :usergames
+    has_many :games, through: :usergames
     # has_secure_password
     
     # validates :email, presence: true

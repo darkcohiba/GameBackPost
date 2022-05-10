@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  skip_before_action :authorize, :only => [:index, :topflap, :topsnake]
+  skip_before_action :authorize, :only => [:index, :create, :topflap, :topsnake]
   
 
   # GET /top flappy
@@ -18,9 +18,9 @@ class GamesController < ApplicationController
 
   # GET /games
   def index
-    @games = Game.all
+    games = Game.all
 
-    render json: @games
+    render json: games
   end
 
   # GET /games/1
@@ -61,6 +61,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.fetch(:game, :user, :score)
+      params.permit(:game, :user, :score)
     end
 end

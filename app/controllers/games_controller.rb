@@ -4,23 +4,23 @@ class GamesController < ApplicationController
 
   # GET /top flappy
   def topflap
-    games = Game.where("game = ? ", "Flappy Bird").order(score: :desc).limit(10)
+    games = Game.where("game = ? ", "Flappy Bird").order(score: :desc).limit(5)
 
     render json: games
   end
 
   # GET /top snake
   def topsnake
-    games = Game.where("game = ? ", "Snake").order(score: :desc).limit(10)
+    games = Game.where("game = ? ", "Snake").order(score: :desc).limit(5)
 
     render json: games
   end
 
   # GET /games
   def index
-    games = Game.all
+    @games = Game.all
 
-    render json: games
+    render json: @games
   end
 
   # GET /games/1
@@ -30,7 +30,7 @@ class GamesController < ApplicationController
 
   # POST /games
   def create
-    @game = Game.new(game_params)
+    @game = Game.new(game_params, session[:current_user])
 
     if @game.save
       render json: @game, status: :created, location: @game
@@ -61,6 +61,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.permit(:game, :user, :score)
+      params.permit(:game, :score)
     end
 end

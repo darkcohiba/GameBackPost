@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  skip_before_action :authorize, :only => [:index, :create, :topflap, :topsnake]
+  skip_before_action :authorize_user, :only => [:index, :create, :topflap, :topsnake]
   
 
   # GET /top flappy
@@ -31,7 +31,9 @@ class GamesController < ApplicationController
   # POST /games
   def create
     
-    @game = Game.new(game_params, session[:current_user])
+    @game = Game.new(game_params)
+    Game.user_id = session[:current_user]
+    puts session[:current_user]
 
     if @game.save
       render json: @game, status: :created, location: @game

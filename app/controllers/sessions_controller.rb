@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     skip_before_action :authorize, :only => [:login, :logout]
 
     def login
-        user = User.find_by(params[:username])
+        user = User.find_by(username:params[:username])
         puts params[:username]
         puts user
         puts "Welcome"

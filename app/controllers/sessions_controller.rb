@@ -2,11 +2,12 @@ class SessionsController < ApplicationController
     skip_before_action :authorize, only: :login
 
     def login
-        user = User.find_by(username:params[:username])
+        user = User.find_by(params[:username])
         puts "Welcome"
-        puts user&.authenticate(password_digest:params[:password])
+        puts user&.authenticate(params[:password])
         puts params[:password]
-        if user&.authenticate(password_digest:params[:password])
+        
+        if user&.authenticate(params[:password])
             session[:current_user] = user.id
             render json: user, status: :ok
             puts "working?"

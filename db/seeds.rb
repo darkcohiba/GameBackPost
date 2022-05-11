@@ -15,37 +15,37 @@ puts "seeding users mofo"
 character1 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password_digest: "password"
+    password: "password"
 )
 
 character2 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password_digest: "password"
+    password: "password"
 )
 
 character3 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password_digest: "password"
+    password: "password"
 )
 
 character4 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password_digest: "password"
+    password: "password"
 )
 
 character5 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password_digest: "password"
+    password: "password"
 )
 
 character6 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password_digest: "password"
+    password: "password"
 )
 
 puts "🌱 Seeding games"

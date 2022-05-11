@@ -27,25 +27,25 @@ character2 = User.create(
 character3 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password: "password"
+    password: "alainsucks"
 )
 
 character4 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password: "password"
+    password: "fuck"
 )
 
 character5 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password: "password"
+    password: "fuckyou"
 )
 
 character6 = User.create(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password: "password"
+    password: "wedgesalad"
 )
 
 puts "🌱 Seeding games"

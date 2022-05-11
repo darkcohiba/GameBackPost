@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorize, only: :login
+    skip_before_action :authorize, :only => [:login, :logout]
 
     def login
         user = User.find_by(params[:username])
+        puts params[:username]
+        puts user
         puts "Welcome"
         puts user&.authenticate(params[:password])
         puts params[:password]
@@ -11,6 +13,8 @@ class SessionsController < ApplicationController
             session[:current_user] = user.id
             render json: user, status: :ok
             puts "working?"
+            puts session[:current_user]
+            puts session
         else
             puts "not working"
             render json: { error: "Invalid Password and/or Username" },  status: :unauthorized
@@ -18,6 +22,8 @@ class SessionsController < ApplicationController
     end 
 
     def logout
+        puts session
+        puts "working?"
         session.delete :current_user
     end 
 end

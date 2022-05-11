@@ -30,6 +30,7 @@ class GamesController < ApplicationController
 
   # POST /games
   def create
+    
     @game = Game.new(game_params, session[:current_user])
 
     if @game.save

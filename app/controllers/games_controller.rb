@@ -35,6 +35,9 @@ class GamesController < ApplicationController
 
     if @game.save
       render json: @game, status: :created, location: @game
+
+
+      
     else
       render json: @game.errors, status: :unprocessable_entity
     end

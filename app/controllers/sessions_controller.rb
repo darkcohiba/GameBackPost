@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorize_user, :only => [:login]
+    skip_before_action :authorize_user, :only => [:login, :logout]
 
     def login
         user = User.find_by(username:params[:username])
@@ -25,5 +25,6 @@ class SessionsController < ApplicationController
 
     def logout
         session.delete :current_user
+        render status: :no_content
     end 
 end

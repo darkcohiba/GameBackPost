@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include ActionController::Cookies
-  skip_before_action :authorize_user, :only => [:index, :show, :create, :update]
+  skip_before_action :authorize_user, :only => [:index, :show, :create, :update, :destroy]
 
   
   # GET /users
@@ -36,7 +36,9 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
+    user = User.find(params[:id])
+    user.destroy
+    head :no_content
   end
 
   private

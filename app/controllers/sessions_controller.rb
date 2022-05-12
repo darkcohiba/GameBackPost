@@ -22,8 +22,6 @@ class SessionsController < ApplicationController
     end 
 
     def logout
-        puts session
-        puts "working?"
         session.delete :current_user
     end 
 end

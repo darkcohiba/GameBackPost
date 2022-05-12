@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username:params[:username])
         puts params[:username]
         puts user
+        puts session[:current_user]
         puts "Welcome"
         puts user&.authenticate(params[:password])
         puts params[:password]
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
             puts "not working"
             render json: { error: "Invalid Password and/or Username" },  status: :unauthorized
         end
+        puts session[:current_user]
     end 
 
     def logout

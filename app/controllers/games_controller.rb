@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  skip_before_action :authorize_user, :only => [:index, :create, :topflap, :topsnake]
+  skip_before_action :authorize_user, :only => [:index, :create, :topsnake, :topflap]
   
 
   # GET /top flappy

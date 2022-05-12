@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include ActionController::Cookies
-  skip_before_action :authorize_user, :only => [:index, :show, :create]
+  skip_before_action :authorize_user, :only => [:index, :show, :create, :update]
 
   
   # GET /users
@@ -29,11 +29,9 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
-      render json: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
+    user = User.find(params[:id])
+    user.update(update_user_params)
+    render json: user, status: :created
   end
 
   # DELETE /users/1
@@ -50,5 +48,9 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.permit(:username, :email, :password)
+    end
+
+    def update_user_params
+      params.permit(:username)
     end
 end

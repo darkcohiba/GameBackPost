@@ -32,8 +32,6 @@ class GamesController < ApplicationController
   def create
     
     @game = Game.new(game_params)
-    Game.user_id = session[:current_user]
-    puts session[:current_user]
 
     if @game.save
       render json: @game, status: :created, location: @game
@@ -64,6 +62,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.permit(:game, :score)
+      params.permit(:game, :score, :user_id)
     end
 end

@@ -4,14 +4,14 @@ class GamesController < ApplicationController
 
   # GET /top flappy
   def topflap
-    games = Game.where("game = ? ", "Flappy Bird").order(score: :desc).limit(5)
+    games = Game.where("game = ? ", "Flappy Bird").order(score: :desc).limit(10)
 
     render json: games
   end
 
   # GET /top snake
   def topsnake
-    games = Game.where("game = ? ", "Snake").order(score: :desc).limit(5)
+    games = Game.where("game = ? ", "Snake").order(score: :desc).limit(10)
 
     render json: games
   end

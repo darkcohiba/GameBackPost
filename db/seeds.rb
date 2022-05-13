@@ -13,37 +13,37 @@ puts "🌱 Seeding start!"
 puts "seeding users mofo"
 
 character1 = User.create(
-    username: Faker::Internet.username,
+    username: "arson",
     email: Faker::Internet.email,
-    password: "password"
+    password: "fire"
 )
 
 character2 = User.create(
-    username: Faker::Internet.username,
+    username: "pass",
     email: Faker::Internet.email,
     password: "password"
 )
 
 character3 = User.create(
-    username: Faker::Internet.username,
+    username: "alain",
     email: Faker::Internet.email,
     password: "alainsucks"
 )
 
 character4 = User.create(
-    username: Faker::Internet.username,
+    username: "carl",
     email: Faker::Internet.email,
     password: "fuck"
 )
 
 character5 = User.create(
-    username: Faker::Internet.username,
+    username: "trex",
     email: Faker::Internet.email,
-    password: "fuckyou"
+    password: "dino"
 )
 
 character6 = User.create(
-    username: Faker::Internet.username,
+    username: "wedge",
     email: Faker::Internet.email,
     password: "wedgesalad"
 )
@@ -75,13 +75,13 @@ g4 = Game.create(
 )
 
 g5 = Game.create(
-    game: "Doodle Jump",
+    game: "Flappy Bird",
     user_id: character4.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 
 g6 = Game.create(
-    game: "Doodle Jump",
+    game: "Flappy Bird",
     user_id: character6.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
@@ -123,13 +123,13 @@ g12 = Game.create(
 )
 
 g13 = Game.create(
-    game: "Snake",
+    game: "Flappy Bird",
     user_id: character3.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
 
 g14 = Game.create(
-    game: "Snake",
+    game: "Flappy Bird",
     user_id: character3.id,
     score: Faker::Number.between(from: 3, to: 15)
 )
